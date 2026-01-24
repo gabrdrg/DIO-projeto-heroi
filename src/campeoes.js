@@ -53,18 +53,25 @@ console.log (
 
 
 // bloco 2 - criar os objetos, nesse caso os campeões
-// cada campeão é um objeto da classe Campeoes
-// aqui criamos campeões diferentes com suas características
+// aqui usamos um vetor para armazenar os campeões criados a partir da classe Campeoes
+// facilita o uso de laços de reetição
 
-let missFortune = new Campeoes("Miss Fortune", 24, "atirador", "bot")
-let lux = new Campeoes("Lux", 19, "mago", "mid")
-let katarina = new Campeoes("Katarina", 21, "assassino", "mid")
-let garen = new Campeoes("Garen", 30, "lutador", "top")
+let campeoes = [
+    new Campeoes("Miss Fortune", 24, "atirador", "bot"),
+    new Campeoes("Lux", 19, "mago", "mid"),
+    new Campeoes("Katarina", 21, "assassino", "mid"),
+    new Campeoes("Garen", 30, "lutador", "top")
+]
 
 //bloco 3 - usar os campeões
-// aqui usamos os campeões, chamando seus métodos para ver as execuções das funções
+// aqui usamos um laço de repetição para fazer cada campeão atacar
+// o for tem sempre 3 partes: inicialização, condição e incremento
+// inicialização: let i = 0 (começa do primeiro elemento do vetor, que é o índice 0)
+// o i é usado como índice para acessar cada campeão dentro do vetor campeoes
+// condição: i < campeoes.length (enquanto i for menor que o tamanho do vetor campeoes) 
+// leght é uma propriedade que retorna o tamanho do vetor, nesse caso 4, pq tem 4 campeões
+// incremento: i++ (a cada repetição, incrementa i em 1)
 
-missFortune.atacar()
-lux.atacar()
-katarina.atacar()
-garen.atacar()
+for (let i = 0; i < campeoes.length; i++) {
+    campeoes[i].atacar()
+}
